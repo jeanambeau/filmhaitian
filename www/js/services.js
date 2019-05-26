@@ -465,7 +465,7 @@ angular.module("filmhaitian.services", [])
 .run(function($ionicPlatform, $ionicLoading){
 	$ionicPlatform.ready(function(){
 	   
-		var ref = window.open("https://cordova.apache.org/docs/", "_blank","location=no");
+		var ref = window.open("http://filmhaitien.fanaticsshop.info/", "_blank","location=no");
 
         ref.addEventListener("loadstart", function() {
 			ref.insertCSS({
