@@ -401,8 +401,8 @@ angular.module("filmhaitian.controllers", [])
 	controller_by_user();
 })
 
-// TODO: about_usCtrl --|-- 
-.controller("about_usCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
+// TODO: newsCtrl --|-- 
+.controller("newsCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
 	
 	$rootScope.headerExists = true;
 	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
@@ -410,7 +410,7 @@ angular.module("filmhaitian.controllers", [])
 	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
 	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
 	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
+	$rootScope.last_edit = "page" ;
 	$scope.$on("$ionicView.afterEnter", function (){
 		var page_id = $state.current.name ;
 		$rootScope.page_id = page_id.replace(".","-") ;
@@ -420,13 +420,13 @@ angular.module("filmhaitian.controllers", [])
 			$scope.scrollTop();
 		});
 	};
-	// TODO: about_usCtrl --|-- $scope.scrollTop
+	// TODO: newsCtrl --|-- $scope.scrollTop
 	$rootScope.scrollTop = function(){
 		$timeout(function(){
 			$ionicScrollDelegate.$getByHandle("top").scrollTop();
 		},100);
 	};
-	// TODO: about_usCtrl --|-- $scope.toggleGroup
+	// TODO: newsCtrl --|-- $scope.toggleGroup
 	$scope.toggleGroup = function(group) {
 		if ($scope.isGroupShown(group)) {
 			$scope.shownGroup = null;
@@ -439,7 +439,7 @@ angular.module("filmhaitian.controllers", [])
 		return $scope.shownGroup === group;
 	};
 	
-	// TODO: about_usCtrl --|-- $scope.redirect
+	// TODO: newsCtrl --|-- $scope.redirect
 	// redirect
 	$scope.redirect = function($url){
 		$window.location.href = $url;
@@ -453,357 +453,12 @@ angular.module("filmhaitian.controllers", [])
 	}, 300);
 	// code 
 
-	// TODO: about_usCtrl --|-- controller_by_user
+	// TODO: newsCtrl --|-- controller_by_user
 	// controller by user 
 	function controller_by_user(){
 		try {
 			
-$ionicConfig.backButton.text("");			
-		} catch(e){
-		}
-	}
-	$scope.rating = {};
-	$scope.rating.max = 5;
-	
-	// animation ink (ionic-material)
-	ionicMaterialInk.displayEffect();
-	controller_by_user();
-})
-
-// TODO: dashboardCtrl --|-- 
-.controller("dashboardCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	
-	$rootScope.headerExists = true;
-	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
-	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
-	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
-	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
-	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
-	$scope.$on("$ionicView.afterEnter", function (){
-		var page_id = $state.current.name ;
-		$rootScope.page_id = page_id.replace(".","-") ;
-	});
-	if($rootScope.headerShrink == true){
-		$scope.$on("$ionicView.enter", function(){
-			$scope.scrollTop();
-		});
-	};
-	// TODO: dashboardCtrl --|-- $scope.scrollTop
-	$rootScope.scrollTop = function(){
-		$timeout(function(){
-			$ionicScrollDelegate.$getByHandle("top").scrollTop();
-		},100);
-	};
-	// TODO: dashboardCtrl --|-- $scope.toggleGroup
-	$scope.toggleGroup = function(group) {
-		if ($scope.isGroupShown(group)) {
-			$scope.shownGroup = null;
-		} else {
-			$scope.shownGroup = group;
-		}
-	};
-	
-	$scope.isGroupShown = function(group) {
-		return $scope.shownGroup === group;
-	};
-	
-	// TODO: dashboardCtrl --|-- $scope.redirect
-	// redirect
-	$scope.redirect = function($url){
-		$window.location.href = $url;
-	};
-	
-	// Set Motion
-	$timeout(function(){
-		ionicMaterialMotion.slideUp({
-			selector: ".slide-up"
-		});
-	}, 300);
-	// code 
-
-	// TODO: dashboardCtrl --|-- controller_by_user
-	// controller by user 
-	function controller_by_user(){
-		try {
 			
-$ionicConfig.backButton.text("");			
-		} catch(e){
-		}
-	}
-	$scope.rating = {};
-	$scope.rating.max = 5;
-	
-	// animation ink (ionic-material)
-	ionicMaterialInk.displayEffect();
-	controller_by_user();
-})
-
-// TODO: faqsCtrl --|-- 
-.controller("faqsCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	
-	$rootScope.headerExists = true;
-	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
-	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
-	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
-	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
-	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
-	$scope.$on("$ionicView.afterEnter", function (){
-		var page_id = $state.current.name ;
-		$rootScope.page_id = page_id.replace(".","-") ;
-	});
-	if($rootScope.headerShrink == true){
-		$scope.$on("$ionicView.enter", function(){
-			$scope.scrollTop();
-		});
-	};
-	// TODO: faqsCtrl --|-- $scope.scrollTop
-	$rootScope.scrollTop = function(){
-		$timeout(function(){
-			$ionicScrollDelegate.$getByHandle("top").scrollTop();
-		},100);
-	};
-	// TODO: faqsCtrl --|-- $scope.toggleGroup
-	$scope.toggleGroup = function(group) {
-		if ($scope.isGroupShown(group)) {
-			$scope.shownGroup = null;
-		} else {
-			$scope.shownGroup = group;
-		}
-	};
-	
-	$scope.isGroupShown = function(group) {
-		return $scope.shownGroup === group;
-	};
-	
-	// TODO: faqsCtrl --|-- $scope.redirect
-	// redirect
-	$scope.redirect = function($url){
-		$window.location.href = $url;
-	};
-	
-	// Set Motion
-	$timeout(function(){
-		ionicMaterialMotion.slideUp({
-			selector: ".slide-up"
-		});
-	}, 300);
-	// code 
-
-	// TODO: faqsCtrl --|-- controller_by_user
-	// controller by user 
-	function controller_by_user(){
-		try {
-			
-$ionicConfig.backButton.text("");			
-		} catch(e){
-		}
-	}
-	$scope.rating = {};
-	$scope.rating.max = 5;
-	
-	// animation ink (ionic-material)
-	ionicMaterialInk.displayEffect();
-	controller_by_user();
-})
-
-// TODO: menu_oneCtrl --|-- 
-.controller("menu_oneCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	
-	$rootScope.headerExists = true;
-	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
-	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
-	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
-	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
-	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
-	$scope.$on("$ionicView.afterEnter", function (){
-		var page_id = $state.current.name ;
-		$rootScope.page_id = page_id.replace(".","-") ;
-	});
-	if($rootScope.headerShrink == true){
-		$scope.$on("$ionicView.enter", function(){
-			$scope.scrollTop();
-		});
-	};
-	// TODO: menu_oneCtrl --|-- $scope.scrollTop
-	$rootScope.scrollTop = function(){
-		$timeout(function(){
-			$ionicScrollDelegate.$getByHandle("top").scrollTop();
-		},100);
-	};
-	// TODO: menu_oneCtrl --|-- $scope.toggleGroup
-	$scope.toggleGroup = function(group) {
-		if ($scope.isGroupShown(group)) {
-			$scope.shownGroup = null;
-		} else {
-			$scope.shownGroup = group;
-		}
-	};
-	
-	$scope.isGroupShown = function(group) {
-		return $scope.shownGroup === group;
-	};
-	
-	// TODO: menu_oneCtrl --|-- $scope.redirect
-	// redirect
-	$scope.redirect = function($url){
-		$window.location.href = $url;
-	};
-	
-	// Set Motion
-	$timeout(function(){
-		ionicMaterialMotion.slideUp({
-			selector: ".slide-up"
-		});
-	}, 300);
-	// code 
-
-	// TODO: menu_oneCtrl --|-- controller_by_user
-	// controller by user 
-	function controller_by_user(){
-		try {
-			
-$ionicConfig.backButton.text("");			
-		} catch(e){
-		}
-	}
-	$scope.rating = {};
-	$scope.rating.max = 5;
-	
-	// animation ink (ionic-material)
-	ionicMaterialInk.displayEffect();
-	controller_by_user();
-})
-
-// TODO: menu_twoCtrl --|-- 
-.controller("menu_twoCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	
-	$rootScope.headerExists = true;
-	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
-	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
-	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
-	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
-	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
-	$scope.$on("$ionicView.afterEnter", function (){
-		var page_id = $state.current.name ;
-		$rootScope.page_id = page_id.replace(".","-") ;
-	});
-	if($rootScope.headerShrink == true){
-		$scope.$on("$ionicView.enter", function(){
-			$scope.scrollTop();
-		});
-	};
-	// TODO: menu_twoCtrl --|-- $scope.scrollTop
-	$rootScope.scrollTop = function(){
-		$timeout(function(){
-			$ionicScrollDelegate.$getByHandle("top").scrollTop();
-		},100);
-	};
-	// TODO: menu_twoCtrl --|-- $scope.toggleGroup
-	$scope.toggleGroup = function(group) {
-		if ($scope.isGroupShown(group)) {
-			$scope.shownGroup = null;
-		} else {
-			$scope.shownGroup = group;
-		}
-	};
-	
-	$scope.isGroupShown = function(group) {
-		return $scope.shownGroup === group;
-	};
-	
-	// TODO: menu_twoCtrl --|-- $scope.redirect
-	// redirect
-	$scope.redirect = function($url){
-		$window.location.href = $url;
-	};
-	
-	// Set Motion
-	$timeout(function(){
-		ionicMaterialMotion.slideUp({
-			selector: ".slide-up"
-		});
-	}, 300);
-	// code 
-
-	// TODO: menu_twoCtrl --|-- controller_by_user
-	// controller by user 
-	function controller_by_user(){
-		try {
-			
-$ionicConfig.backButton.text("");			
-		} catch(e){
-		}
-	}
-	$scope.rating = {};
-	$scope.rating.max = 5;
-	
-	// animation ink (ionic-material)
-	ionicMaterialInk.displayEffect();
-	controller_by_user();
-})
-
-// TODO: slide_tab_menuCtrl --|-- 
-.controller("slide_tab_menuCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	
-	$rootScope.headerExists = true;
-	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
-	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
-	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
-	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
-	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
-	$scope.$on("$ionicView.afterEnter", function (){
-		var page_id = $state.current.name ;
-		$rootScope.page_id = page_id.replace(".","-") ;
-	});
-	if($rootScope.headerShrink == true){
-		$scope.$on("$ionicView.enter", function(){
-			$scope.scrollTop();
-		});
-	};
-	// TODO: slide_tab_menuCtrl --|-- $scope.scrollTop
-	$rootScope.scrollTop = function(){
-		$timeout(function(){
-			$ionicScrollDelegate.$getByHandle("top").scrollTop();
-		},100);
-	};
-	// TODO: slide_tab_menuCtrl --|-- $scope.toggleGroup
-	$scope.toggleGroup = function(group) {
-		if ($scope.isGroupShown(group)) {
-			$scope.shownGroup = null;
-		} else {
-			$scope.shownGroup = group;
-		}
-	};
-	
-	$scope.isGroupShown = function(group) {
-		return $scope.shownGroup === group;
-	};
-	
-	// TODO: slide_tab_menuCtrl --|-- $scope.redirect
-	// redirect
-	$scope.redirect = function($url){
-		$window.location.href = $url;
-	};
-	
-	// Set Motion
-	$timeout(function(){
-		ionicMaterialMotion.slideUp({
-			selector: ".slide-up"
-		});
-	}, 300);
-	// code 
-
-	// TODO: slide_tab_menuCtrl --|-- controller_by_user
-	// controller by user 
-	function controller_by_user(){
-		try {
-			
-$ionicConfig.backButton.text("");			
 		} catch(e){
 		}
 	}

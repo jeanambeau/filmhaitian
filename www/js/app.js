@@ -209,77 +209,13 @@ angular.module("filmhaitian", ["ngCordova","ionic","ionMdInput","ionic-material"
 			controller: "side_menusCtrl",
 	})
 
-	.state("filmhaitian.about_us", {
-		url: "/about_us",
+	.state("filmhaitian.news", {
+		url: "/news",
+		cache:false,
 		views: {
 			"filmhaitian-side_menus" : {
-						templateUrl:"templates/filmhaitian-about_us.html",
-						controller: "about_usCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("filmhaitian.dashboard", {
-		url: "/dashboard",
-		views: {
-			"filmhaitian-side_menus" : {
-						templateUrl:"templates/filmhaitian-dashboard.html",
-						controller: "dashboardCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("filmhaitian.faqs", {
-		url: "/faqs",
-		views: {
-			"filmhaitian-side_menus" : {
-						templateUrl:"templates/filmhaitian-faqs.html",
-						controller: "faqsCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("filmhaitian.menu_one", {
-		url: "/menu_one",
-		views: {
-			"filmhaitian-side_menus" : {
-						templateUrl:"templates/filmhaitian-menu_one.html",
-						controller: "menu_oneCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("filmhaitian.menu_two", {
-		url: "/menu_two",
-		views: {
-			"filmhaitian-side_menus" : {
-						templateUrl:"templates/filmhaitian-menu_two.html",
-						controller: "menu_twoCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("filmhaitian.slide_tab_menu", {
-		url: "/slide_tab_menu",
-		views: {
-			"filmhaitian-side_menus" : {
-						templateUrl:"templates/filmhaitian-slide_tab_menu.html",
-						controller: "slide_tab_menuCtrl"
+						templateUrl:"templates/filmhaitian-news.html",
+						controller: "newsCtrl"
 					},
 			"fabButtonUp" : {
 						template: '',
